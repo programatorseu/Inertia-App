@@ -11,11 +11,12 @@
         </Link>
     </div>
     </template>
-    <script>
+    <script setup>
     import Nav from "../Shared/Nav";
     import {Link} from "@inertiajs/inertia-vue3";
-export default {
-    components: {Nav, Link},
-    props: {time: String}
-};
+    defineProps({
+        time: String
+    })
+
+
     </script>
