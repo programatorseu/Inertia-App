@@ -4,6 +4,9 @@
         <h1 class="font-bold text-lg">
           My App
         </h1>
+        <p class="text-sm ml-4">
+          Welcome Back, {{ username }}!
+        </p>
         <Nav />
       </header>
     </section>
@@ -19,7 +22,12 @@
   import Nav from "./Nav";
   
   export default {
-    components: { Nav }
-  };
+    components: { Nav },
+    computed: {
+        username() {
+        return this.$page.props.auth.user.username;
+     }
+    }
+}
   </script>
   
