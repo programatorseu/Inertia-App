@@ -19,8 +19,9 @@
                 type="text"
                 name="name"
                 id="name"
-                required
+                
             />
+            <div v-if="errors.name" v-text="errors.name" class="text-red-500 text-xs mt-1"></div>
             </div>    
 
             <div class="mb-6">
@@ -31,8 +32,9 @@
                 type="email"
                 name="email"
                 id="email"
-                required
+                
             />
+            <div v-if="errors.email" v-text="errors.email" class="text-red-500 text-xs mt-1"></div>
             </div>    
             <div class="mb-6">
                 <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="password"> Password </label>
@@ -42,8 +44,9 @@
                 type="password"
                 name="password"
                 id="password"
-                required
+                
             />
+            <div v-if="errors.password" v-text="errors.password" class="text-red-500 text-xs mt-1"></div>
             </div>    
             <div class="mb-6">
       <button type="submit" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500">Submit</button>
@@ -53,6 +56,10 @@
   <script setup>
     import { reactive } from 'vue';
     import { Inertia } from '@inertiajs/inertia';
+    defineProps({
+        errors: Object
+    });
+
     let form = reactive({
         name: '',
         email: '',
