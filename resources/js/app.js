@@ -6,7 +6,9 @@ createInertiaApp({
   resolve: async name => {
     let page = (await import(`./Pages/${name}`)).default;
     // check if there is already Layout setup : 
-    page.layout ??= Layout;
+    if(page.layout === undefined) {
+      page.layout = Layout;
+    }
     return page;
   },
   setup({ el, App, props, plugin }) {
