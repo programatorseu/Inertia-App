@@ -497,6 +497,14 @@ var map = {
 	"./Users.vue": [
 		"./resources/js/Pages/Users.vue",
 		"resources_js_Pages_Users_vue"
+	],
+	"./Users/Create": [
+		"./resources/js/Pages/Users/Create.vue",
+		"resources_js_Pages_Users_Create_vue"
+	],
+	"./Users/Create.vue": [
+		"./resources/js/Pages/Users/Create.vue",
+		"resources_js_Pages_Users_Create_vue"
 	]
 };
 function webpackAsyncContext(req) {
