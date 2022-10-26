@@ -17,6 +17,4 @@
     defineProps({
         time: String
     })
-
-
     </script>
