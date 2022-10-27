@@ -3,12 +3,13 @@ import { createInertiaApp, Link, Head } from '@inertiajs/inertia-vue3';
 import {InertiaProgress} from "@inertiajs/progress";
 import Layout from "./Shared/Layout";
 createInertiaApp({
-  resolve: async name => {
-    let page = (await import(`./Pages/${name}`)).default;
-    // check if there is already Layout setup : 
-    if(page.layout === undefined) {
+  resolve: name => {
+    let page = require(`./Pages/${name}`).default;
+
+    if (page.layout === undefined) {
       page.layout = Layout;
     }
+
     return page;
   },
   setup({ el, App, props, plugin }) {
