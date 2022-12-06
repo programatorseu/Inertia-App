@@ -108,7 +108,7 @@ npx mix watch
 
 
 
-### 1.3 Links
+### 1.3 Links + Progress indicator 
 
 to mimic serve response wait : 
 
@@ -120,6 +120,7 @@ Route::get('/users', function () {
 Link component from vue !  ->> we do not perfom full page request !! 
 
 - export component and wrap navigation items with `Link`
+```res/js/Shared/Nav.vue```
 
 ```js
 <template>
@@ -140,9 +141,6 @@ export default {
 };
 </script>
 ```
-
-create ad Shared/Nav.vue
-
 then to use it :
 
 ```js
@@ -155,15 +153,21 @@ export default {
 };
 ```
 
-### 1.4 Progress indicators
 
 > progress libraary 
->
-> - pull in to app.js file  
+> install
+```npm install @inertiajs/progress```
+> - pull in to `res/js/app.js` file  
 > - at the bottom of app.js init 
 
 ```js
-InertiaProgress.init();
+import {InertiaProgress} from "@inertiajs/progress";
+...
+InertiaProgress.init({
+  color:'red',
+  showSpinner: true
+});
+
 ```
 
 ### 1.5 Perform non-get requests
