@@ -1,12 +1,12 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 
-iInertia.js
+iInertia.js - build SPA with classing server side routing 
 
-Client side routing library - connect server-side framework with client-side framework
+Client side routing library - connects server-side framework with client-side framework
 
 - we can use authorization, controller even though we use single page application
-- we do not need to use repo with API 
+- we do not need to use multiple repository with API 
 
 
 
@@ -19,12 +19,14 @@ Client side routing library - connect server-side framework with client-side fra
 
 
 ## 1.1 Install and configure inertia 
+having freshed laravel app 
+we need 2 adapters for server-side and client-side fraemwrosk 
 
 ```js
 composer require inertiajs/inertia-laravel
 ```
 
-add root template -> to load site assets 
+add root template -> to load site assets `res/views/app.blade.php`
 
 ->  set up middleware  (to provide proper response)
 
@@ -40,14 +42,14 @@ Once generated, register the `HandleInertiaRequests` middleware in your `App\Htt
 npm install @inertiajs/inertia @inertiajs/inertia-vue3
 ```
 
--> install vue next  & paackage  for **single file components**
+-> install vue   & paackage  for **single file components**
 
 ```bash
  npm install vue@next
 npm install -D @vue/compiler-sfc
 ```
 
-res/app.js paste code from documentation 
+res/app.js paste code from documentation  inertia client side 
 
 1 interesting thing - how to track page 
 
@@ -66,8 +68,9 @@ create res/js/Pages directory
 
 ```bash
 npm install
-npx mix # compile down according to our 
+npx mix # compile down according to our configuration
 ```
+check `app.blade.php` if use `mix` directive
 
 ### 1.2 Pages
 
