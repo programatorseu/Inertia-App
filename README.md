@@ -29,10 +29,16 @@ composer require inertiajs/inertia-laravel
 add root template -> to load site assets `res/views/app.blade.php`
 
 ->  set up middleware  (to provide proper response)
+```bash
+php artisan inertia:middleware
+```
 
-Once generated, register the `HandleInertiaRequests` middleware in your `App\Http\Kernel`
+Once generated, register the `HandleInertiaRequests` middleware in your `App\Http\Kernel` to `middlewareGroups`
 
+```php
+            \App\Http\Middleware\HandleInertiaRequests::class
 
+```
 
 **setup client side **
 
@@ -63,7 +69,12 @@ createInertiaApp({
 create res/js/Pages directory
 
 -> add to webpack mix to turn on VUE + turn on on versioning support (add hash to compiled files )
-
+```js
+mix.js('resources/js/app.js', 'public/js')
+    .vue(3)
+    .postCss('resources/css/app.css', 'public/css', [
+    ...
+```
 -> install remaing depnedency 
 
 ```bash
